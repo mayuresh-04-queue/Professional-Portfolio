@@ -89,7 +89,6 @@
 
   const menuToggle = document.querySelector('.menu-toggle');
 const navLinks = document.querySelector('.nav-links');
-const navbarInner = document.querySelector('.navbar-inner');
 
 if(menuToggle && navLinks){
 
@@ -97,11 +96,12 @@ if(menuToggle && navLinks){
 
         navLinks.classList.toggle('active');
 
-        navbarInner.classList.toggle('menu-open');
+        if(navbarInner){
+            navbarInner.classList.toggle('menu-open');
+        }
 
     });
 
 }
-
 
 })();
