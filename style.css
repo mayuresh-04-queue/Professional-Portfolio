@@ -1426,33 +1426,50 @@ footer {
 
 }
 
+
+
 .menu-toggle{
     display:none;
 }
 
 @media (max-width:640px){
 
+    .nav-cta{
+        display:none;
+    }
+
+    .navbar-inner{
+        justify-content:flex-end;
+        padding:12px 18px;
+    }
+
     .menu-toggle{
         display:block;
         background:none;
         border:none;
-        color:var(--text-primary);
-        font-size:1rem;
-        font-weight:600;
+        color:white;
+        font-size:1.8rem;
         cursor:pointer;
+        margin-left:auto;
+    }
+
+    .nav-links{
+        display:none;
     }
 
     .nav-links.active{
         display:flex;
         flex-direction:column;
+        align-items:center;
         gap:16px;
-        margin-top:15px;
         width:100%;
-        text-align:center;
+        margin-top:20px;
+        padding-top:15px;
+        border-top:1px solid rgba(255,255,255,0.1);
     }
 
-    .navbar-inner{
+    .navbar-inner.menu-open{
         flex-direction:column;
-        border-radius:24px;
+        align-items:stretch;
     }
 }
