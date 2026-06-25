@@ -94,13 +94,22 @@ if(menuToggle && navLinks){
 
     menuToggle.addEventListener('click', function(){
 
-        navLinks.classList.toggle('active');
+    navLinks.classList.toggle('active');
 
-        if(navbarInner){
-            navbarInner.classList.toggle('menu-open');
-        }
+    navbarInner.classList.toggle('menu-open');
+
+});
+
+document.querySelectorAll('.nav-links a').forEach(function(link){
+
+    link.addEventListener('click', function(){
+
+        navLinks.classList.remove('active');
+        navbarInner.classList.remove('menu-open');
 
     });
+
+});
 
 }
 
