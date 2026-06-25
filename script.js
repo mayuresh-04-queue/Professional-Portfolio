@@ -113,4 +113,38 @@ document.querySelectorAll('.nav-links a').forEach(function(link){
 
 }
 
+/* ----------------------------------------------------
+   ACTIVE NAV LINK (SCROLL SPY)
+---------------------------------------------------- */
+
+const sections = document.querySelectorAll("section[id], header[id]");
+const navItems = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", function () {
+
+    let current = "";
+
+    sections.forEach(function(section){
+
+        const sectionTop = section.offsetTop - 150;
+        const sectionHeight = section.offsetHeight;
+
+        if(window.scrollY >= sectionTop){
+            current = section.getAttribute("id");
+        }
+
+    });
+
+    navItems.forEach(function(link){
+
+        link.classList.remove("active");
+
+        if(link.getAttribute("href") === "#" + current){
+            link.classList.add("active");
+        }
+
+    });
+
+});
+
 })();
