@@ -12,7 +12,7 @@
       if (!target) return;
       e.preventDefault();
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      history.pushState(null, '', id);
+      
     });
   });
 
